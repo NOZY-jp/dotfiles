@@ -20,5 +20,7 @@ claude = "latest"
 fastfetch = "latest"
 
 [env]
+SUDO_EDITOR = "nvim"
 EDITOR = "nvim"
+VISUAL = "nvim"
 BROWSER = "wslview"
