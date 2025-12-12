@@ -1,5 +1,10 @@
 #:schema https://jj-vcs.github.io/jj/latest/config-schema.json
-
 [user]
 name = "nozy-jp"
 email = "nozyjp.1214@gmail.com"
+
+[ui]
+default-command = "log"
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"
