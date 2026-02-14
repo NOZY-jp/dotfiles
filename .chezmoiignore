@@ -1,1 +1,4 @@
 *local.toml
+.config/nvim/lazy
+.config/nvim/plugin
+.config/nvim/undo

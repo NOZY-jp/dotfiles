@@ -4,17 +4,17 @@
 
 ---@type LazySpec
 return {
-	"AstroNvim/astrocommunity",
-	{ import = "astrocommunity.pack.lua" },
-	{ import = "astrocommunity.pack.rust" },
-	{ import = "astrocommunity.pack.python" },
-	{ import = "astrocommunity.pack.typescript" },
-	{ import = "astrocommunity.pack.java" },
-	{ import = "astrocommunity.pack.astro" },
-	{ import = "astrocommunity.scrolling.nvim-scrollbar" },
-	{ import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
-	{ import = "astrocommunity.editing-support.dial-nvim" },
-	{ import = "astrocommunity.editing-support.wildfire-nvim" },
+  "AstroNvim/astrocommunity",
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.scrolling.nvim-scrollbar" },
+  { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
+  { import = "astrocommunity.editing-support.dial-nvim" },
+  { import = "astrocommunity.editing-support.wildfire-nvim" },
 
-	-- import/override with your plugins folder
+  -- import/override with your plugins folder
 }
