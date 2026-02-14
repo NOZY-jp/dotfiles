@@ -1,0 +1,136 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "zai-coding-plan/glm-5",
+  "default_agent": "plan",
+  "instructions": [
+    "~/.config/opencode/rules/**/*.md"
+  ],
+  "plugin": [
+    "oh-my-opencode@3.5.3"
+  ],
+  "lsp": {
+    "basedpyright": {
+      "enabled": true,
+      "command": [
+        "uvx",
+        "--from",
+        "basedpyright",
+        "basedpyright-langserver",
+        "--stdio"
+      ],
+      "extensions": [".py", ".pyi"]
+    }
+  },
+  "agent": {
+    "ask": {
+      "mode": "primary",
+      "model": "zai-coding-plan/glm-5",
+      "prompt": "IMPORTANT: Use subagents extensively:\n- Launch multiple codesearch agents in parallel to understand the codebase",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false,
+        "patch": false,
+        "todowrite": false,
+        "read": true,
+        "grep": true,
+        "glob": true,
+        "list": true,
+        "todoread": true,
+        "webfetch": true
+      }
+    },
+    "general": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-sonnet-4.5"
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "github-copilot/gemini-3-flash-preview"
+    },
+    "codesearch": {
+      "mode": "subagent",
+      "model": "github-copilot/gemini-3-flash-preview",
+      "description": "Codebase search and pattern discovery agent"
+    },
+    "websearch": {
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.2",
+      "description": "Web search agent for retrieving latest information"
+    },
+    "planner": {
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.2",
+      "description": "Feature implementation planning agent"
+    },
+    "code-reviewer": {
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.2",
+      "description": "Code quality and security reviewer"
+    },
+    "security-reviewer": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-opus-4.6",
+      "description": "Security vulnerability analyzer"
+    },
+    "tdd-guide": {
+      "mode": "subagent",
+      "model": "github-copilot/gpt-5.2",
+      "description": "TDD workflow guide"
+    },
+    "build-resolver": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-opus-4.5",
+      "description": "Build error resolver"
+    },
+    "refactor-cleaner": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-opus-4.5",
+      "description": "Refactoring and dead code removal"
+    },
+    "spec-reviewer": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-opus-4.6",
+      "description": "Spec compliance reviewer - verifies implementation matches plan"
+    },
+    "frontend-designer": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-sonnet-4.5",
+      "description": "Frontend design specialist for UI/UX implementation"
+    }
+  },
+  "mcp": {
+    "pdf-reader": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "npx",
+        "-y",
+        "@sylphx/pdf-reader-mcp"
+      ]
+    },
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "{env:CONTEXT7_API_KEY}"
+      ],
+      "enabled": true
+    },
+    "websearch_exa": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "exa-mcp-server"
+      ],
+      "timeout": 60000,
+      "environment": {
+        "EXA_API_KEY": "{env:EXA_API_KEY}"
+      }
+    }
+  }
+}

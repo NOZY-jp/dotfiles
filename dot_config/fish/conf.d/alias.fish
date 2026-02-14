@@ -58,3 +58,10 @@ alias jjs="jj status"
 alias jjg="jj git"
 alias jjgp="jj git push"
 alias jjgf="jj git fetch"
+
+#chezmoi
+alias ch="chezmoi"
+alias cha="chezmoi apply"
+alias chc="chezmoi cd"
+
+alias oc="opencode"
