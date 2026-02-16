@@ -19,10 +19,10 @@ jq = "latest"
 claude = "latest"
 fastfetch = "latest"
 "github:anomalyco/opencode" = "latest"
+infisical = "latest"
 
 [env]
 SUDO_EDITOR = "nvim"
 EDITOR = "nvim"
 VISUAL = "nvim"
 BROWSER = "wslview"
-
