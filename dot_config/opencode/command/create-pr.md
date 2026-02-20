@@ -1,7 +1,7 @@
 ---
 description: bookmarkからPRを作成
-agent: build
-model: opencode/grok-code
+agent: sisyphus
+model: zai-coding-plan/glm-5
 ---
 
 指定されたbookmarkからGitHub PRを作成してください。
@@ -23,7 +23,7 @@ model: opencode/grok-code
 ## 手順
 1. `fish -c 'jj bookmark list'` でbookmarkの存在を確認
 2. `fish -c 'jj log -r "main::$1"'` でmainからの変更を確認
-3. 変更内容を分析してPRの説明を作成
+3. 変更内容を分析してPRの説明を作成するタスクをサブエージェント`writing`に委託
 4. `fish -c 'jj git push --bookmark $1'` でリモートにpush
 5. `gh pr create --head $1 --base main` でPRを作成
 

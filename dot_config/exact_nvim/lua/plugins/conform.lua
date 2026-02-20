@@ -8,6 +8,16 @@ return {
       ["biome-check"] = {
         require_cwd = true,
       },
+      ruff_format = {
+        command = "ruff",
+        args = { "format", "--stdin-filename", "$FILENAME", "-" },
+        stdin = true,
+      },
+      ruff_fix = {
+        command = "ruff",
+        args = { "check", "--fix", "--stdin-filename", "$FILENAME", "-" },
+        stdin = true,
+      },
     },
 
     formatters_by_ft = {
@@ -19,6 +29,7 @@ return {
       javascriptreact = { "dprint", "biome-check" },
       fish = { "fish_indent" },
       typst = { "typstyle" },
+      python = { "ruff_fix", "ruff_format" },
     },
 
     format_on_save = {

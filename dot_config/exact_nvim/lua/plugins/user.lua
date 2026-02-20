@@ -1,14 +1,5 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
@@ -16,9 +7,6 @@ return {
     config = function() require("lsp_signature").setup() end,
   },
 
-  -- == Examples of Overriding Plugins ==
-
-  -- customize dashboard options
   {
     "folke/snacks.nvim",
     opts = {
@@ -84,5 +72,34 @@ return {
         Rule("a", "a", "-vim")
       )
     end,
+  },
+
+  {
+    "jay-babu/mason-null-ls.nvim",
+    optional = true,
+    opts = function(_, opts)
+      opts.ensure_installed = {}
+    end,
+  },
+
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    optional = true,
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "basedpyright", "ruff" })
+      opts.ensure_installed = vim.tbl_filter(function(tool)
+        return tool ~= "black" and tool ~= "isort"
+      end, opts.ensure_installed or {})
+    end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        python = { "ruff_fix", "ruff_format" },
+      },
+    },
   },
 }

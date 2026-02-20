@@ -19,6 +19,18 @@
         "--stdio"
       ],
       "extensions": [".py", ".pyi"]
+    },
+    "ruff": {
+      "enabled": true,
+      "command": [
+        "uvx",
+        "--from",
+        "ruff",
+        "ruff",
+        "server",
+        "--stdio"
+      ],
+      "extensions": [".py", ".pyi"]
     }
   },
   "agent": {
