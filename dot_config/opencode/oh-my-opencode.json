@@ -1,0 +1,80 @@
+{
+	"$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+	"disabled_hooks": ["todo-continuation-enforcer"],
+	"sisyphus_agent": {
+		"replace_plan": false
+	},
+	"categories": {
+		"visual-engineering": {
+			"model": "github-copilot/gemini-3.1-pro-preview",
+			"variant": "high"
+		},
+		"artistry": {
+			"model": "github-copilot/gemini-3.1-pro-preview",
+			"variant": "high"
+		},
+		"deep": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"quick": {
+			"model": "github-copilot/claude-sonnet-4.6"
+		},
+		"unspecified-high": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"ultrabrain": {
+			"model": "github-copilot/claude-opus-4.6"
+		},
+		"unspecified-low": {
+			"model": "github-copilot/claude-sonnet-4.6"
+		},
+		"writing": {
+			"model": "github-copilot/claude-sonnet-4.6"
+		}
+	},
+	"agents": {
+		"sisyphus": {
+			"model": "zai-coding-plan/glm-5.1"
+		},
+		"sisyphus-junior": {
+			"model": "github-copilot/claude-opus-4.6",
+			"variant": "high"
+		},
+		"hephaestus": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"prometheus": {
+			"model": "zai-coding-plan/glm-5-turbo"
+		},
+		"oracle": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"librarian": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"explore": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"multimodal-looker": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"metis": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"momus": {
+			"model": "github-copilot/gpt-5.4",
+			"variant": "high"
+		},
+		"atlas": {
+			"model": "zai-coding-plan/glm-5-turbo",
+		}
+	}
+}

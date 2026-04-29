@@ -1,0 +1,147 @@
+{
+	"競プロ基本テンプレート": {
+		"prefix": "ini",
+		"body": [
+			"import sys",
+			"MOD = 10**9 + 7",
+			"INF = 10**18",
+			"def solve():",
+			"    $0",
+			"",
+			"if __name__ == \"__main__\":",
+			"    solve()",
+			""
+		],
+		"description": "競技プログラミング用の基本的なテンプレートを挿入します。"
+	},
+	"競プロ用ライブラリインポート": {
+		"prefix": "inimp",
+		"body": [
+			"import sys",
+			"import math",
+			"import bisect",
+			"import heapq",
+			"from collections import deque, defaultdict, Counter",
+			"from itertools import permutations, combinations, product",
+			"$0"
+		],
+		"description": "競技プログラミングでよく使うライブラリをインポートします。"
+	},
+	"入力: 整数1つ": {
+		"prefix": "ii",
+		"body": [
+			"${1:n} = int(input())"
+		],
+		"description": "n = int(input())"
+	},
+	"入力: 文字列1つ": {
+		"prefix": "si",
+		"body": [
+			"${1:s} = input()"
+		],
+		"description": "s = input()"
+	},
+	"入力: map(int, input().split())": {
+		"prefix": "mii",
+		"body": [
+			"${1:a}, ${2:b} = map(int, input().split())"
+		],
+		"description": "a, b = map(int, input().split())"
+	},
+	"入力: list(map(int, input().split()))": {
+		"prefix": "lii",
+		"body": [
+			"${1:a} = list(map(int, input().split()))"
+		],
+		"description": "a = list(map(int, input().split()))"
+	},
+	"入力: H, W (高さ, 幅)": {
+		"prefix": "hw",
+		"body": [
+			"h, w = map(int, input().split())"
+		],
+		"description": "h, w = map(int, input().split())"
+	},
+	"入力: 縦N行の整数": {
+		"prefix": "icol",
+		"body": [
+			"${1:l} = [int(input()) for _ in range(${2:n})]"
+		],
+		"description": "l = [int(input()) for _ in range(n)]"
+	},
+	"入力: 文字列グリッド": {
+		"prefix": "grids",
+		"body": [
+			"${1:s} = [input() for _ in range(${2:h})]"
+		],
+		"description": "s = [input() for _ in range(h)]"
+	},
+	"入力: 整数グリッド": {
+		"prefix": "gridi",
+		"body": [
+			"${1:g} = [list(map(int, input().split())) for _ in range(${2:h})]"
+		],
+		"description": "g = [list(map(int, input().split())) for _ in range(h)]"
+	},
+	"入力 (式として): int(input())": {
+		"prefix": "i",
+		"body": "${1:n} = int(input())",
+		"description": "int(input())"
+	},
+	"入力 (式として): input()": {
+		"prefix": "s",
+		"body": "${1:s} = input()",
+		"description": "input()"
+	},
+	"入力 (式として): map(int, input().split())": {
+		"prefix": "mi",
+		"body": "map(int, input().split())",
+		"description": "map(int, input().split())"
+	},
+	"入力 (式として): list(map(int, input().split()))": {
+		"prefix": "li",
+		"body": "list(map(int, input().split()))",
+		"description": "list(map(int, input().split()))"
+	},
+	"Yes/No出力": {
+		"prefix": "yn",
+		"body": [
+			"print(\"Yes\" if ${1:condition} else \"No\")"
+		],
+		"description": "print(\"Yes\" if condition else \"No\")"
+	},
+	"n回マルチテストケース": {
+		"prefix": "nmul",
+		"body": [
+			"def solve():",
+			"    ",
+			"${1:n} = int(input()",
+			"def main():",
+			"    $2",
+			"",
+			"if __name__ == \"__main__\":",
+			"    main()",
+		],
+		"description": "マルチテストケースの回数が与えられている場合"
+	},
+	"回数不明マルチテストケース": {
+		"prefix": "mul",
+		"body": [
+			"def solve($3):",
+			"    $4",
+			"",
+			"def main():",
+			"    while True:",
+			"        ${1:n = int(input())}",
+			"        if n == 0:",
+			"            break",
+			"        $2",
+			"        solve(${3:n})",
+			"",
+			"if __name__ == \"__main__\":",
+			"    main()",
+		],
+		"description": "print(\"Yes\" if condition else \"No\")"
+	}
+
+}

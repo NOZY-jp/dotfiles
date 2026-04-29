@@ -1,0 +1,25 @@
+{
+	"name": "snippets-o-nozy",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"all"
+				],
+				"path": "./snippets/all.json"
+			},
+			{
+				"language": [
+					"python"
+				],
+				"path": "./python.json"
+			},
+			{
+			  "language": [
+			    "rust"
+			  ],
+			  "path": "./rust.json"
+			}
+		]
+	}
+}
