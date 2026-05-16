@@ -5,6 +5,9 @@ return {
     local neoscroll = require "neoscroll"
 
     neoscroll.setup {
+      -- Disable performance mode — it calls vim.treesitter.stop/start without
+      -- bufnr which can kill Rust syntax highlighting when popups close
+      performance_mode = false,
       ignored_events = {
         "WinScrolled",
         "CursorMoved",
