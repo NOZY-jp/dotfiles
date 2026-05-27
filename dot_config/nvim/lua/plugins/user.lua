@@ -8,6 +8,20 @@ return {
   },
 
   {
+    "mfussenegger/nvim-jdtls",
+    optional = true,
+    opts = function(_, opts)
+      -- jdtls は JDK 21 以下で動かす（JDK 25 だと signature help 等で ClassCastException が出る）
+      local jdtls_java = vim.env.JDTLS_JAVA
+      if (not jdtls_java or jdtls_java == "") and vim.fn.executable "java21" == 1 then
+        jdtls_java = vim.fn.exepath "java21"
+      end
+      if jdtls_java and jdtls_java ~= "" and opts.cmd then opts.cmd[1] = jdtls_java end
+      return opts
+    end,
+  },
+
+  {
     "folke/snacks.nvim",
     opts = {
       dashboard = {
